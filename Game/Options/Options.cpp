@@ -30,7 +30,7 @@ Options::Options(float width, float height)
 	title.setFont(font);
 	title.setColor(sf::Color(6, 77, 141));
 	title.setString("Options");
-	title.setCharacterSize(50);
+	title.setCharacterSize(width/20);
 	title.setPosition(sf::Vector2f(width / 2 - title.getGlobalBounds().width / 2, 10));
 
 	selectedItemIndex = 0;
@@ -135,6 +135,20 @@ void Options::options1(sf::RenderWindow &window)
 					{
 						sound2.play();
 						cout << "Window size button has been pressed" << endl;
+						//window.setSize(sf::Vector2u(1024, 768));
+						//window.setPosition(sf::Vector2i(0, 0));
+						int resX = 1024;
+						int	resY = 786;
+						int bitDepth = 36;
+						sf::VideoMode VMode(resX, resY, bitDepth);
+						window.create(VMode, "Title of the Game", sf::Style::Titlebar);
+						window.setFramerateLimit(60);
+
+						int newH = (1920 * resY) / resX;
+						int displace = (newH - 1080) / (-2);
+
+						window.setView(sf::View(sf::FloatRect(0, displace, 1920, newH)));
+						
 						break;
 					}
 
