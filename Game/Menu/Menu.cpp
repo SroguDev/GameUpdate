@@ -41,10 +41,6 @@ Menu::Menu(float width, float height)
 
 }
 
-Menu::~Menu()
-{
-}
-
 void Menu::draw(sf::RenderWindow &window)
 {
 	for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)

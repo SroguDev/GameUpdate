@@ -32,7 +32,6 @@ class Menu
 
 public:
 	Menu(float width, float height);
-	~Menu();
 
 	void draw(sf::RenderWindow &window);
 	void menu(sf::RenderWindow &window);
@@ -51,17 +50,20 @@ private:
 
 //***********************************************
 
-class Options
+class Options :public Menu
 {
 
 public:
 	Options(float width, float height);
-	~Options();
+
 	void options1(sf::RenderWindow &window);
+	
+	/*
 	void draw(sf::RenderWindow &window);
 	void MoveUp();
 	void MoveDown();
 	int GetPressedItem() { return selectedItemIndex; }
+	*/
 
 private:
 	int selectedItemIndex;

@@ -2,6 +2,7 @@
 #include "../Game.h"
 
 Options::Options(float width, float height)
+	:Menu(width, height)
 {
 	if (!font.loadFromFile("Fonts/lato.ttf"))
 	{
@@ -36,10 +37,6 @@ Options::Options(float width, float height)
 	selectedItemIndex = 0;
 }
 
-Options::~Options()
-{
-}
-
 void Options::draw(sf::RenderWindow &window)
 {
 	for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
@@ -49,6 +46,7 @@ void Options::draw(sf::RenderWindow &window)
 	}
 }
 
+/*
 void Options::MoveUp()
 {
 	sound.play();
@@ -80,7 +78,7 @@ void Options::MoveDown()
 		options[selectedItemIndex].setColor(sf::Color(155, 193, 28));
 	}
 }
-
+*/
 
 void Options::options1(sf::RenderWindow &window)
 {
@@ -141,7 +139,7 @@ void Options::options1(sf::RenderWindow &window)
 						int	resY = 786;
 						int bitDepth = 36;
 						sf::VideoMode VMode(resX, resY, bitDepth);
-						window.create(VMode, "Title of the Game", sf::Style::Titlebar);
+						window.create(VMode, "Title of the Game", sf::Style::Fullscreen);
 						window.setFramerateLimit(60);
 
 						int newH = (1920 * resY) / resX;
