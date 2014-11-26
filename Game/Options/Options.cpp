@@ -149,7 +149,10 @@ void Options::options1(sf::RenderWindow &window)
 					{
 						sound2.play();
 						//state = END;
-						window.close();
+						Menu openMenu(window.getSize().x, window.getSize().y);
+						//wywo³anie metody menu() z klasy MENU
+						openMenu.menu(window);
+						//window.close();
 						break;
 					}
 					}
